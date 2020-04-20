@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style>
+@import "./style_font/font.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

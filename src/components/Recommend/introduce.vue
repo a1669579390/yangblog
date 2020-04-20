@@ -1,17 +1,17 @@
 <template>
   <div id="app">
       <div class="title">
-        <div class="title_01">
-          <span>{{data.title}}</span>
-          <i></i>
-        </div>
-        <p>{{data.desc}}</p>
-        <div class="img">
-          <img src="../../assets/img/smalllogo/qq.png" alt="">
-          <img src="../../assets/img/smalllogo/wechat.png" alt="">
-          <img src="../../assets/img/smalllogo/github.png" alt="">
-        </div>
-      </div>
+			<div class="title_01">
+				<span>{{data.title}}</span>
+				<i></i>
+			</div>
+			<p>{{data.desc}}</p>
+			<div class="img">
+				<img src="../../assets/img/smalllogo/qq.png" alt="">
+				<img src="../../assets/img/smalllogo/wechat.png" alt="">
+				<img src="../../assets/img/smalllogo/github.png" alt="">
+			</div>
+		</div>
   </div>
 </template>
 <script>
