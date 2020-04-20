@@ -3,7 +3,7 @@
     <vue-particles
         color="#ccc"
         :particleOpacity="0.7"
-        :particlesNumber="60"
+        :particlesNumber="80"
         shapeType="circle"
         :particleSize="4"
         linesColor="#000"
@@ -50,6 +50,7 @@ export default {
   height: 100%;
   position: fixed;
   top: 0;
-  z-index: 0;
+  z-index: 1110;
+  pointer-events: none;
 }
 </style>

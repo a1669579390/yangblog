@@ -6,6 +6,11 @@
           <i></i>
         </div>
         <p>{{data.desc}}</p>
+        <div class="img">
+          <img src="../../assets/img/smalllogo/qq.png" alt="">
+          <img src="../../assets/img/smalllogo/wechat.png" alt="">
+          <img src="../../assets/img/smalllogo/github.png" alt="">
+        </div>
       </div>
   </div>
 </template>
@@ -36,6 +41,10 @@ export default {
     width: 290px;
     height: 200px;
     background-color: rgb(255, 255, 255,.8);
+    transition: all .5s;
+  }
+  #app:hover{
+    box-shadow: 5px 5px 10px 10px #ccc;
   }
   .title{
     display: flex;
@@ -69,5 +78,14 @@ export default {
     font-size: 14px;
     padding: 0 40px;
     margin: 0;
+  }
+  .img{
+    padding: 10px 30px;
+  }
+  .img img:nth-child(1){
+    margin-left: 30px;
+  }
+  .img img:not(:nth-child(1)){
+    margin-left: 40px;
   }
 </style>
