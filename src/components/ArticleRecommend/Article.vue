@@ -5,29 +5,29 @@
 		</h2>
 		<!-- 文章推荐列表 -->
 		<ul>
-			<li>
+			<li v-for="(item,index) in items" :key="index">
 				<div class="clearfix">
 					<div class="news-img-box">
-						<img src="https://cdn.duanliang920.com/uploads/allimg/140605/1-1406052123280-L.jpg" />
+						<img :src="item.img" />
 					</div>
 					<div class="news-content">
 						<h3 class="title-h3">
-							<span>React</span>
-							如何建立个人博客？
+							<span>{{item.classify}}</span>
+							{{item.title}}
 						</h3>
 						<div class="list_item">
-							几个月没有发过文章了，最近确实挺忙！！这几个月一直在搞公司的一个小程序项目，所以一直没抽出时间，后面我会把遇到的问题及踩到的坑也会提出来，今天咱们不说踩过的坑，说一个比较常见及常用的功能，就是内容的展开和收起。可能大家就开始想了，这么简单一功能还用看别人教吗？咱们先废话不多说，先来看看这个是怎样的
+							{{item.content}}
 						</div>
 						<div class="tools">
 							<span class="date-time">
 								<i class="el-icon-time"></i>
 								发布时间：
-								<em>2014-06-05 10:24:00</em>
+								<em>{{item.releaseTime}}</em>
 							</span>
 							<span class="classify">
 								<i class="el-icon-document"></i>
 								分类：
-								<em>VUE</em>
+								<em>{{item.classify}}</em>
 							</span>
 						</div>						
 					</div>
@@ -38,6 +38,33 @@
 </template>
 
 <script>
+	export default{
+		data(){
+			return{
+				start:'',
+				items:[]
+			}
+		},
+		methods:{
+			getRecommand(start){
+				this.$axios.get('/users/',{
+					params:{
+						start
+					}
+				})
+				.then(res=>{
+					console.log(res.data)
+					this.items=res.data
+				})
+				.catch(err=>{
+					console.log(err)
+				})
+			}
+		},
+		mounted(){
+			this.getRecommand()
+		}
+	}
 </script>
 
 <style scoped>
