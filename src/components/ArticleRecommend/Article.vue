@@ -8,7 +8,7 @@
 			<li v-for="(item,index) in items" :key="index">
 				<div class="clearfix">
 					<div class="news-img-box">
-						<img :src="item.img" />
+						<img :src="GLOBAL.BASE_URL+item.img" />
 					</div>
 					<div class="news-content">
 						<h3 class="title-h3">
